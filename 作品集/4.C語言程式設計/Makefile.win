@@ -1,0 +1,43 @@
+# Project: 12
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o main2.o analysis1.o analysis2.o calendar.o description.o
+LINKOBJ  = main.o main2.o analysis1.o analysis2.o calendar.o description.o
+LIBS     = -L"C:/Users/peter/Desktop/DevCppPortable/MinGW64/lib" -L"C:/Users/peter/Desktop/DevCppPortable/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/include" -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/include" -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/peter/Desktop/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 12.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+main2.o: main2.c
+	$(CC) -c main2.c -o main2.o $(CFLAGS)
+
+analysis1.o: analysis1.c
+	$(CC) -c analysis1.c -o analysis1.o $(CFLAGS)
+
+analysis2.o: analysis2.c
+	$(CC) -c analysis2.c -o analysis2.o $(CFLAGS)
+
+calendar.o: calendar.c
+	$(CC) -c calendar.c -o calendar.o $(CFLAGS)
+
+description.o: description.c
+	$(CC) -c description.c -o description.o $(CFLAGS)
