@@ -1,1 +1,1 @@
-# NTUT_application-documents
+# 此處為台北科技大學資訊與財金管理所備審資料所在地
